@@ -1,0 +1,8 @@
+version: "3.1"
+services:
+  fastapi-abiertos:
+    build: .
+    environment:
+      AEMET_API_KEY: "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaWNvcm9tZXJvMDdAdW1hLmVzIiwianRpIjoiYWEwYmNmMTYtNWVmZS00NGM5LWI5ZWEtY2UyMGVkYmZiYmUzIiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE2NjkxNTQ4MTgsInVzZXJJZCI6ImFhMGJjZjE2LTVlZmUtNDRjOS1iOWVhLWNlMjBlZGJmYmJlMyIsInJvbGUiOiIifQ.WGkjodLH_jQ_2ZtMR646y49sdeXxIzBjQ_6Q2l3JaBI"
+    ports:
+      - "8000:8000"

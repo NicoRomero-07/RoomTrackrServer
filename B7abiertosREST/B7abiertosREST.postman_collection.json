@@ -1,0 +1,233 @@
+{
+  "info": {
+    "_postman_id": "68af8155-3c0b-4f15-ac76-858287ec2867",
+    "name": "B7abiertosREST",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "22367356"
+  },
+  "item": [
+    {
+      "name": "/bus-stops",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8000/bus-stops",
+          "host": ["localhost:8000"],
+          "path": ["bus-stops"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/bus-stops/:id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8000/bus-stops/153",
+          "host": ["localhost:8000"],
+          "path": ["bus-stops", "153"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/bus_stops/search",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8000/bus-stops/search?line_code=133",
+          "host": ["localhost:8000"],
+          "path": ["bus-stops", "search"],
+          "query": [
+            {
+              "key": "line_code",
+              "value": "133"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/bus_stops/search/nearby",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8000/bus-stops/search/nearby?lat=36.73573&lon=-4.4235854",
+          "host": ["localhost:8000"],
+          "path": ["bus-stops", "search", "nearby"],
+          "query": [
+            {
+              "key": "lat",
+              "value": "36.73573"
+            },
+            {
+              "key": "lon",
+              "value": "-4.4235854"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/buses",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8000/buses",
+          "host": ["localhost:8000"],
+          "path": ["buses"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/buses/:id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8000/buses/524",
+          "host": ["localhost:8000"],
+          "path": ["buses", "524"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/buses/search",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8000/buses/search?line_code=1234",
+          "host": ["localhost:8000"],
+          "path": ["buses", "search"],
+          "query": [
+            {
+              "key": "line_code",
+              "value": "1234"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/buses/search/nearby",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8000/buses/search/nearby?lat=36.73573&lon=-4.4235854",
+          "host": ["localhost:8000"],
+          "path": ["buses", "search", "nearby"],
+          "query": [
+            {
+              "key": "lat",
+              "value": "36.73573"
+            },
+            {
+              "key": "lon",
+              "value": "-4.4235854"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/forecasts",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8000/forecasts",
+          "host": ["localhost:8000"],
+          "path": ["forecasts"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/forecasts/today",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var moment = require('moment');",
+              "",
+              "pm.environment.set('currentdate', moment().format((\"YYYY-MM-DD\")));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8000/forecasts/{{currentdate}}",
+          "host": ["localhost:8000"],
+          "path": ["forecasts", "{{currentdate}}"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/forecasts/:day",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var moment = require('moment');",
+              "",
+              "pm.environment.set('tomorrow', moment().add(1,\"day\").format((\"YYYY-MM-DD\")));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8000/forecasts/{{tomorrow}}",
+          "host": ["localhost:8000"],
+          "path": ["forecasts", "{{tomorrow}}"]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "BookingId",
+      "value": "6357f5f9846c668a1eb04832"
+    }
+  ]
+}

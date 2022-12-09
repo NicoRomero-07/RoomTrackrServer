@@ -1,0 +1,310 @@
+{
+	"info": {
+		"_postman_id": "15d99a2b-8962-40f9-a294-e358fbe50afe",
+		"name": "B7servidorREST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23833387"
+	},
+	"item": [
+		{
+			"name": "/households",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\":\"testId\",\r\n  \"host\": {\r\n    \"host_username\": \"nicoromero\",\r\n    \"host_email\": \"nicoromero07@uma.es\"\r\n  },\r\n  \"title\": \"Test\",\r\n  \"description\": \"Test\",\r\n  \"address\": {\r\n    \"id\" : \"testIdAddress\",\r\n    \"street\": \"C/Test\",\r\n    \"number\": \"1\",\r\n    \"geojson\": {\r\n      \"latitude\": 0,\r\n      \"longitude\": 0\r\n    }\r\n  },\r\n  \"photo\": [\r\n    \"string\"\r\n  ],\r\n  \"num_bathroom\": 0,\r\n  \"num_bed\": 0,\r\n  \"max_capacity\": 0,\r\n  \"price_euro_per_night\": 0,\r\n  \"rating\": 0,\r\n  \"availability\": [\r\n    [\r\n      {\r\n        \"$date\": \"2022-11-03T10:28:56Z\"\r\n      },\r\n      {\r\n        \"$date\": \"2022-12-03T10:28:56Z\"\r\n      }\r\n    ]\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/households/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"households",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/households/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/households/:id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"households",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "testId"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/households",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/households/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"households",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/households/filter/username",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/households/filter/username?name=testing",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"households",
+						"filter",
+						"username"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "testing"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/households/filter/price",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/households/filter/price?max_price=150",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"households",
+						"filter",
+						"price"
+					],
+					"query": [
+						{
+							"key": "max_price",
+							"value": "150"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/households/owners/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/households/owners/:id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"households",
+						"owners",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "testId"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/households/address/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/households/address/:id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"households",
+						"address",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "testId"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/households/:id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"host\": {\r\n    \"host_username\": \"testingUpdated\",\r\n    \"host_email\": \"testUpdated@uma.es\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/households/:id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"households",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "testId"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/households/:id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/households/:id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"households",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "testId"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/addresses/:id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/addresses/:id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"addresses",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "testIdAddress"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

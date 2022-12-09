@@ -1,0 +1,9 @@
+version: "3.1"
+services:
+  fastapi:
+    build: .
+    environment:
+      ATLAS_URI: "mongodb+srv://admin:IngWeb2022-2023@roomtrackr.cc1p6qc.mongodb.net/?retryWrites=true&w=majority"
+      DB_NAME: iweb
+    ports:
+      - "8001:8001"

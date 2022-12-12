@@ -164,6 +164,7 @@ class BookedHousehold(BaseModel):
     id : str
     title: str
     address: BookedHouseholdAddress
+    photo: str
 
 class Booking(BaseModel):
     id: str = Field(default_factory=uuid.uuid4, alias="id")
@@ -177,6 +178,28 @@ class Booking(BaseModel):
         if values.get('ending') < values.get('start'):
             raise ValueError("ending date must be after start date")
         return values
+    
+class HouseholdComment(BaseModel):
+    id: str
+    
+class Comment(BaseModel):
+    id: str = Field(default_factory=uuid.uuid4, alias="id")
+    user: RenterUser
+    household: HouseholdComment
+    text: str
+    valoration: int
+    @root_validator
+    def check_valoration(cls, values):
+        if values.get('valoration') < 0 or values.get('valoration') > 5:
+            raise ValueError("valoration must be between 0 and 5")
+        return values
+    
+class CommentUpdate(BaseModel):
+    user: Optional[RenterUser]
+    text: Optional[str]
+    household: Optional[HouseholdComment]
+    valoration: Optional[int]
+       
 
 class BookedHouseholdAddressUpdate(BaseModel):
     street: Optional[str]

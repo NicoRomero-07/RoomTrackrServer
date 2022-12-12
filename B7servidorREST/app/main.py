@@ -2,10 +2,12 @@ from fastapi import FastAPI
 from pymongo import MongoClient
 from dotenv import dotenv_values
 import uvicorn
+from fastapi.middleware.cors import CORSMiddleware
 from app.routers.household_router import router as household_router
 from app.routers.book_router import router as book_router
 from app.routers.address_router import router as address_router
 from app.routers.users_router import router as user_router
+from app.routers.comment_router import router as comment_router
 from app.Imgur.Imgur import authenticate
 from fastapi.middleware.cors import CORSMiddleware
 import os
@@ -15,7 +17,6 @@ import os
 app = FastAPI()
 
 config = os.environ
-print(config)
 
 origins = [
     "*"
@@ -44,3 +45,7 @@ app.include_router(household_router, tags=["households"], prefix="/households")
 app.include_router(book_router, tags=["bookings"], prefix="/bookings")
 app.include_router(address_router, tags=["addresses"], prefix="/addresses")
 app.include_router(user_router, tags=["users"], prefix="/users")
+app.include_router(comment_router, tags=["comments"], prefix="/comments")
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="127.0.0.1", port=8001, reload=True)

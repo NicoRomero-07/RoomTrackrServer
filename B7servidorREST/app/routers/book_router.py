@@ -31,6 +31,7 @@ def create_household(request: Request, Booking: Booking = Body(...)):
     Booking['household']['title'] = household.get('title')
     Booking['household']['address']['street'] = household.get('address').get('street')
     Booking['household']['address']['number'] = household.get('address').get('number')
+    Booking['household']['photo'] = household.get('photo')[0]
     #Booking['household']['address']['postal_code'] = household.get('address').get('postal_code')
     
     #Get and set host and renter data

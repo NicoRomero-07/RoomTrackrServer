@@ -5,6 +5,7 @@ from typing import Optional
 from app.model import User, Address
 from app.model import Household, HouseholdUpdate
 from datetime import datetime
+from dateutil import parser
 import requests
 
 router = APIRouter()
@@ -41,9 +42,19 @@ def list_households(request: Request):
 def list_nearby_households(request: Request, lat: float, lon: float, radius: int, start_date: datetime, end_date: datetime):
     request.app.database["household"].create_index(
         [("address.geojson", "2dsphere")])
+        
+    '''Find households that have available dates in the range of start_date and end_date'''
     nearby_households = request.app.database["household"].find({"address.geojson": {"$near": {"$geometry": {
-        "type": "Point", "coordinates": [lon, lat]}, "$maxDistance": radius}}})
-    return list(nearby_households)
+        "type": "Point", "coordinates": [lon, lat]}, "$maxDistance": radius }} })
+    
+    nearby = list(nearby_households)
+    res = []
+    for h in nearby:
+        for a in h["availability"]:
+            if (parser.parse(a[0]["$date"]) <= start_date and parser.parse(a[1]["$date"]) >= end_date):
+                res.append(h)
+
+    return res
 
 
 @router.get("/{id}", response_description="Get a single household", response_model=Household)

@@ -5,6 +5,7 @@
 
 # C extensions
 *.so
+client_secret.json
 
 # Distribution / packaging
 .Python

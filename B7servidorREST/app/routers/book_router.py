@@ -27,17 +27,10 @@ def create_household(request: Request, Booking: Booking = Body(...)):
 
     Booking = jsonable_encoder(Booking)
     
-    household = household_router.get_household(Booking.get('household').get('id'), request)
-    Booking['household']['title'] = household.get('title')
-    Booking['household']['address']['street'] = household.get('address').get('street')
-    Booking['household']['address']['number'] = household.get('address').get('number')
-    Booking['household']['photo'] = household.get('photo')[0]
-    #Booking['household']['address']['postal_code'] = household.get('address').get('postal_code')
-    
-    #Get and set host and renter data
-    
+    household_router.get_household(Booking.get('household').get('id'), request)
     
     new_booking= request.app.database["booking"].insert_one(Booking)
+    
     created_booking = request.app.database["booking"].find_one(
         {"_id": new_booking.inserted_id}
     )
@@ -57,8 +50,6 @@ def create_household(request: Request, Booking: Booking = Body(...)):
         raise ValueError("Start date must be in the future")
     if endingDate < datetime.now():
         raise ValueError("Ending date must be in the future")
-    
-    
     
     
     return created_booking

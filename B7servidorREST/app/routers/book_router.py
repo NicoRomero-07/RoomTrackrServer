@@ -75,6 +75,8 @@ def create_household(request: Request, Booking: Booking = Body(...)):
     Booking['household']['address']['street'] = household.get('address').get('street')
     Booking['household']['address']['number'] = household.get('address').get('number')
     Booking['household']['photo'] = household.get('photo')
+    Booking['household']['host'] = household.get('host').get('host_username')
+    Booking['household']['host'] = household.get('host').get('host_email')
     
 
     new_booking = request.app.database["booking"].insert_one(Booking)

@@ -199,6 +199,26 @@ def list_households_by_user(
 
     return households
 
+"""LIST HOUSEHOLDS BY DESCRIPTION"""
+
+
+@router.get(
+    "/filter/description",
+    response_description="Get the list of Households by description",
+    response_model=List[Household],
+)
+def list_households_by_description(
+    request: Request, response: Response, name: Optional[str] = "/*"
+):
+
+    households = list(
+        request.app.database["household"].find(
+            {"description": {"$regex": name}}, limit=100
+        )
+    )
+
+    return households
+
 
 """LIST HOUSEHOLDS FILTERED BY PRICE"""
 

@@ -37,6 +37,19 @@ def list_households(request: Request):
     households = list(request.app.database["household"].find(limit=100))
     return households
 
+@router.get(
+    "/from_user/{username}",
+    response_description="Get the households of an user ordered by date",
+    response_model=List[Household],
+)
+def get_ordered_household_by_username(username: str, request: Request):
+
+    households = list(
+        request.app.database["household"]
+        .find({"host.host_username": username}, {"_id": 0}, limit=100)
+        .sort("start", -1)
+    )
+    return households
 
 @router.get("/search/nearby", response_description="List all households", response_model=List[Household])
 def list_nearby_households(request: Request, lat: float, lon: float, radius: int, start_date: datetime, end_date: datetime):

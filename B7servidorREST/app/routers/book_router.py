@@ -44,33 +44,37 @@ def create_household(request: Request, Booking: Booking = Body(...)):
 
     Booking = jsonable_encoder(Booking)
 
-    format_data = "%Y-%m-%dT%H:%M:%S.%f"
+    format_data = "2022-12-29T20:13:54.924Z"
     try:
-        startDate = datetime.strptime(Booking.get("start"), format_data)
+        startDate = datetime.fromisoformat(Booking.get("start"))
     except ValueError:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Start datetime format not valid",
+            detail="Starting datetime format not valid",
         )
     try:
-        endingDate = datetime.strptime(Booking.get("ending"), format_data)
+        endingDate = datetime.fromisoformat(Booking.get("ending"))
     except ValueError:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Ending datetime format not valid",
         )
 
-    if startDate < datetime.now():
+    if startDate < datetime.now().fromisoformat(format_data):
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Start date must be in the future",
         )
-    if endingDate < datetime.now():
+    if endingDate < datetime.now().fromisoformat(format_data):
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Ending date must be in the future",
         )
-    household_router.get_household(Booking.get("household").get("id"), request)
+    household = household_router.get_household(Booking.get("household").get("id"), request)
+    Booking['household']['title'] = household.get('title')
+    Booking['household']['address']['street'] = household.get('address').get('street')
+    Booking['household']['address']['number'] = household.get('address').get('number')
+    Booking['household']['photo'] = household.get('photo')[0]
 
     new_booking = request.app.database["booking"].insert_one(Booking)
 

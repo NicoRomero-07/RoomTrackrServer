@@ -208,12 +208,29 @@ def list_households_by_user(
     response_model=List[Household],
 )
 def list_households_by_description(
-    request: Request, response: Response, name: Optional[str] = "/*"
+    request: Request, response: Response, description: Optional[str] = "/*"
 ):
 
     households = list(
         request.app.database["household"].find(
-            {"description": {"$regex": name}}, limit=100
+            {"description": {"$regex": description, "$options": "i"}}, limit=100
+        )
+    )
+
+    return households
+
+@router.get(
+    "/filter/username/description",
+    response_description="Get the list of Households by user and description",
+    response_model=List[Household],
+)
+def list_households_by_description(
+    request: Request, response: Response, username: Optional[str] = "/*",description: Optional[str] = "/*"
+):
+
+    households = list(
+        request.app.database["household"].find(
+            {"description": {"$regex": description, "$options": "i"},"host.host_username": {"$regex": username}}, limit=100
         )
     )
 

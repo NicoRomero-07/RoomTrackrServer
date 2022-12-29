@@ -176,16 +176,16 @@ class Household(BaseModel):
 
 
 class BookedHouseholdAddress(BaseModel):
-    street: str
-    number: str
-    postal_code: int
+    street: Optional[str]
+    number: Optional[str]
+    postal_code: Optional[int]
 
 
 class BookedHousehold(BaseModel):
     id: str
     title: Optional[str]
     address: Optional[BookedHouseholdAddress]
-    photo: Optional[str]
+    photo: Optional[List[str]]
 
 
 class Booking(BaseModel):

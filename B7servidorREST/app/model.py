@@ -183,18 +183,18 @@ class BookedHouseholdAddress(BaseModel):
 
 class BookedHousehold(BaseModel):
     id: str
-    title: str
-    address: BookedHouseholdAddress
-    photo: str
+    title: Optional[str]
+    address: Optional[BookedHouseholdAddress]
+    photo: Optional[str]
 
 
 class Booking(BaseModel):
     id: str = Field(default_factory=uuid.uuid4, alias="id")
-    start: datetime
+    start: Optional[datetime]
     ending: datetime
     host: HouseholdUser
     renter: RenterUser
-    household: BookedHousehold
+    household: Optional[BookedHousehold]
 
     @root_validator
     def check_start_ending_dates(cls, values):

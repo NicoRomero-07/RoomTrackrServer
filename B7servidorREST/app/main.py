@@ -9,6 +9,7 @@ from app.routers.address_router import router as address_router
 from app.routers.users_router import router as user_router
 from app.routers.comment_router import router as comment_router
 from app.routers.authentication_router import router as auth_router
+from app.Imgur.Imgur import authenticate
 from fastapi.middleware.cors import CORSMiddleware
 import os
 

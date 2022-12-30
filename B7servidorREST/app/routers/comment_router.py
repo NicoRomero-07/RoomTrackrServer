@@ -103,3 +103,8 @@ def update_comment(id: str, request: Request, data: CommentUpdate = Body(...)):
     raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
                         detail=f"Comment with ID {id} not found")
 
+'''GET COMMENTS FROM HOUSEHOLD'''
+@router.get("/household/{id}", response_description="Get comments from household", response_model=List[Comment])
+def get_comment(id: str, request: Request):
+    comments = list(request.app.database["comment"].find({"household.id": id}))
+    return comments

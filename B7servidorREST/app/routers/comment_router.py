@@ -19,8 +19,8 @@ def create_comment(request: Request, comment: Comment = Body(...)):
     if request.app.database["household"].find_one({"id" : comment["household"]["id"]}) is None:
         raise HTTPException(status_code=404, detail="Household not found")
     
-    if request.app.database["user"].find_one({"username" : comment["user"]["renter_username"]}) is None:
-        raise HTTPException(status_code=404, detail="user not found")
+    #if request.app.database["user"].find_one({"username" : comment["user"]["renter_username"]}) is None:
+    #    raise HTTPException(status_code=404, detail="user not found")
     
     #Comprobar que el nombre de usuario coincide con el email de ese usuario
     

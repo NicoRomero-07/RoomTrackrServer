@@ -1,0 +1,40 @@
+# fly.toml file generated for roomtrackrservidor on 2022-12-30T19:55:57+01:00
+
+app = "roomtrackrservidor"
+kill_signal = "SIGINT"
+kill_timeout = 5
+processes = []
+
+[env]
+  ATLAS_URI = "mongodb+srv://admin:IngWeb2022-2023@roomtrackr.cc1p6qc.mongodb.net/?retryWrites=true&w=majority"
+  DB_NAME = "iweb"
+  
+[experimental]
+  allowed_public_ports = []
+  auto_rollback = true
+
+[[services]]
+  http_checks = []
+  internal_port = 8001
+  processes = ["app"]
+  protocol = "tcp"
+  script_checks = []
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
+    type = "connections"
+
+  [[services.ports]]
+    force_https = true
+    handlers = ["http"]
+    port = 80
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443
+
+  [[services.tcp_checks]]
+    grace_period = "1s"
+    interval = "15s"
+    restart_limit = 0
+    timeout = "2s"

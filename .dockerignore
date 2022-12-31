@@ -1,0 +1,335 @@
+# flyctl launch added from B7abiertosREST/.gitignore
+# Byte-compiled / optimized / DLL files
+B7abiertosREST/**/**/__pycache__
+B7abiertosREST/**/*.py[cod]
+B7abiertosREST/**/*$py.class
+
+# C extensions
+B7abiertosREST/**/*.so
+
+# Distribution / packaging
+B7abiertosREST/**/.Python
+B7abiertosREST/**/build
+B7abiertosREST/**/develop-eggs
+B7abiertosREST/**/dist
+B7abiertosREST/**/downloads
+B7abiertosREST/**/eggs
+B7abiertosREST/**/.eggs
+B7abiertosREST/**/lib
+B7abiertosREST/**/lib64
+B7abiertosREST/**/parts
+B7abiertosREST/**/sdist
+B7abiertosREST/**/var
+B7abiertosREST/**/wheels
+B7abiertosREST/**/share/python-wheels
+B7abiertosREST/**/*.egg-info
+B7abiertosREST/**/.installed.cfg
+B7abiertosREST/**/*.egg
+B7abiertosREST/**/MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+B7abiertosREST/**/*.manifest
+B7abiertosREST/**/*.spec
+
+# Installer logs
+B7abiertosREST/**/pip-log.txt
+B7abiertosREST/**/pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+B7abiertosREST/**/htmlcov
+B7abiertosREST/**/.tox
+B7abiertosREST/**/.nox
+B7abiertosREST/**/.coverage
+B7abiertosREST/**/.coverage.*
+B7abiertosREST/**/.cache
+B7abiertosREST/**/nosetests.xml
+B7abiertosREST/**/coverage.xml
+B7abiertosREST/**/*.cover
+B7abiertosREST/**/*.py,cover
+B7abiertosREST/**/.hypothesis
+B7abiertosREST/**/.pytest_cache
+B7abiertosREST/**/cover
+
+# Translations
+B7abiertosREST/**/*.mo
+B7abiertosREST/**/*.pot
+
+# Django stuff:
+B7abiertosREST/**/*.log
+B7abiertosREST/**/local_settings.py
+B7abiertosREST/**/db.sqlite3
+B7abiertosREST/**/db.sqlite3-journal
+
+# Flask stuff:
+B7abiertosREST/**/instance
+B7abiertosREST/**/.webassets-cache
+
+# Scrapy stuff:
+B7abiertosREST/**/.scrapy
+
+# Sphinx documentation
+B7abiertosREST/**/docs/_build
+
+# PyBuilder
+B7abiertosREST/**/.pybuilder
+B7abiertosREST/**/target
+
+# Jupyter Notebook
+B7abiertosREST/**/**/*.ipynb*
+B7abiertosREST/**/.ipynb_checkpoints
+
+# IPython
+B7abiertosREST/**/profile_default
+B7abiertosREST/**/ipython_config.py
+
+# pyenv
+#   For a library or package, you might want to ignore these files since the code is
+#   intended to run in multiple environments; otherwise, check them in:
+# .python-version
+
+# pipenv
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in case of collaboration, if having platform-specific dependencies or dependencies
+#   having no cross-platform support, pipenv may install dependencies that don't work, or not
+#   install all needed dependencies.
+#Pipfile.lock
+
+# poetry
+#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
+#   This is especially recommended for binary packages to ensure reproducibility, and is more
+#   commonly ignored for libraries.
+#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
+#poetry.lock
+
+# pdm
+#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
+#pdm.lock
+#   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
+#   in version control.
+#   https://pdm.fming.dev/#use-with-ide
+B7abiertosREST/**/.pdm.toml
+
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
+B7abiertosREST/**/__pypackages__
+
+# Celery stuff
+B7abiertosREST/**/celerybeat-schedule
+B7abiertosREST/**/celerybeat.pid
+
+# SageMath parsed files
+B7abiertosREST/**/*.sage.py
+
+# Environments
+B7abiertosREST/**/.env
+B7abiertosREST/**/.venv
+B7abiertosREST/**/env
+B7abiertosREST/**/venv
+B7abiertosREST/**/ENV
+B7abiertosREST/**/env.bak
+B7abiertosREST/**/venv.bak
+
+# Spyder project settings
+B7abiertosREST/**/.spyderproject
+B7abiertosREST/**/.spyproject
+
+# Rope project settings
+B7abiertosREST/**/.ropeproject
+
+# mkdocs documentation
+B7abiertosREST/site
+
+# mypy
+B7abiertosREST/**/.mypy_cache
+B7abiertosREST/**/.dmypy.json
+B7abiertosREST/**/dmypy.json
+
+# Pyre type checker
+B7abiertosREST/**/.pyre
+
+# pytype static type analyzer
+B7abiertosREST/**/.pytype
+
+# Cython debug symbols
+B7abiertosREST/**/cython_debug
+
+# PyCharm
+#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
+#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
+#  and can be added to the global gitignore or merged into this file.  For a more nuclear
+#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
+#.idea/
+
+B7abiertosREST/**/**/*.geojson
+B7abiertosREST/**/.vscode
+
+# flyctl launch added from B7servidorREST/.gitignore
+# Byte-compiled / optimized / DLL files
+B7servidorREST/**/*/**/__pycache__
+B7servidorREST/**/*.py[cod]
+B7servidorREST/**/*$py.class
+
+# C extensions
+B7servidorREST/**/*.so
+B7servidorREST/**/client_secret.json
+
+# Distribution / packaging
+B7servidorREST/**/.Python
+B7servidorREST/**/build
+B7servidorREST/**/develop-eggs
+B7servidorREST/**/dist
+B7servidorREST/**/downloads
+B7servidorREST/**/eggs
+B7servidorREST/**/.eggs
+B7servidorREST/**/lib
+B7servidorREST/**/lib64
+B7servidorREST/**/parts
+B7servidorREST/**/sdist
+B7servidorREST/**/var
+B7servidorREST/**/wheels
+B7servidorREST/**/share/python-wheels
+B7servidorREST/**/*.egg-info
+B7servidorREST/**/.installed.cfg
+B7servidorREST/**/*.egg
+B7servidorREST/**/MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+B7servidorREST/**/*.manifest
+B7servidorREST/**/*.spec
+
+# Installer logs
+B7servidorREST/**/pip-log.txt
+B7servidorREST/**/pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+B7servidorREST/**/htmlcov
+B7servidorREST/**/.tox
+B7servidorREST/**/.nox
+B7servidorREST/**/.coverage
+B7servidorREST/**/.coverage.*
+B7servidorREST/**/.cache
+B7servidorREST/**/nosetests.xml
+B7servidorREST/**/coverage.xml
+B7servidorREST/**/*.cover
+B7servidorREST/**/*.py,cover
+B7servidorREST/**/.hypothesis
+B7servidorREST/**/.pytest_cache
+B7servidorREST/**/cover
+
+# Translations
+B7servidorREST/**/*.mo
+B7servidorREST/**/*.pot
+
+# Django stuff:
+B7servidorREST/**/*.log
+B7servidorREST/**/local_settings.py
+B7servidorREST/**/db.sqlite3
+B7servidorREST/**/db.sqlite3-journal
+
+# Flask stuff:
+B7servidorREST/**/instance
+B7servidorREST/**/.webassets-cache
+
+# Scrapy stuff:
+B7servidorREST/**/.scrapy
+
+# Sphinx documentation
+B7servidorREST/**/docs/_build
+
+# PyBuilder
+B7servidorREST/**/.pybuilder
+B7servidorREST/**/target
+
+# Jupyter Notebook
+B7servidorREST/**/**/*.ipynb*
+B7servidorREST/**/.ipynb_checkpoints
+
+# IPython
+B7servidorREST/**/profile_default
+B7servidorREST/**/ipython_config.py
+
+# pyenv
+#   For a library or package, you might want to ignore these files since the code is
+#   intended to run in multiple environments; otherwise, check them in:
+# .python-version
+
+# pipenv
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in case of collaboration, if having platform-specific dependencies or dependencies
+#   having no cross-platform support, pipenv may install dependencies that don't work, or not
+#   install all needed dependencies.
+#Pipfile.lock
+
+# poetry
+#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
+#   This is especially recommended for binary packages to ensure reproducibility, and is more
+#   commonly ignored for libraries.
+#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
+#poetry.lock
+
+# pdm
+#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
+#pdm.lock
+#   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
+#   in version control.
+#   https://pdm.fming.dev/#use-with-ide
+B7servidorREST/**/.pdm.toml
+
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
+B7servidorREST/**/__pypackages__
+
+# Celery stuff
+B7servidorREST/**/celerybeat-schedule
+B7servidorREST/**/celerybeat.pid
+
+# SageMath parsed files
+B7servidorREST/**/*.sage.py
+
+# Environments
+B7servidorREST/**/.env
+B7servidorREST/**/.venv
+B7servidorREST/**/env
+B7servidorREST/**/venv
+B7servidorREST/**/ENV
+B7servidorREST/**/env.bak
+B7servidorREST/**/venv.bak
+
+# Spyder project settings
+B7servidorREST/**/.spyderproject
+B7servidorREST/**/.spyproject
+
+# Rope project settings
+B7servidorREST/**/.ropeproject
+
+# mkdocs documentation
+B7servidorREST/site
+
+# mypy
+B7servidorREST/**/.mypy_cache
+B7servidorREST/**/.dmypy.json
+B7servidorREST/**/dmypy.json
+
+# Pyre type checker
+B7servidorREST/**/.pyre
+
+# pytype static type analyzer
+B7servidorREST/**/.pytype
+
+# Cython debug symbols
+B7servidorREST/**/cython_debug
+
+# PyCharm
+#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
+#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
+#  and can be added to the global gitignore or merged into this file.  For a more nuclear
+#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
+B7servidorREST/**/.idea
+
+B7servidorREST/**/**/*.geojson
+B7servidorREST/**/.vscode
+
+B7servidorREST/**/auth.ini
+fly.toml

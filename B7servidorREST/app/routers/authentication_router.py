@@ -44,7 +44,8 @@ async def login(code: Code):
             ],
             state="xyz123",
         )
-        flow.redirect_uri = "http://localhost:3000"
+        flow.redirect_uri = "https://roomtrackr.vercel.app" #"http://localhost:3000"
+        
         flow.fetch_token(code=code.code)
         tokens = flow.credentials
         f = open("client_secret.json", "r")

@@ -210,6 +210,7 @@ class HouseholdComment(BaseModel):
 class Comment(BaseModel):
     id: str = Field(default_factory=uuid.uuid4, alias="id")
     user: RenterUser
+    photo: str
     household: HouseholdComment
     text: str
     valoration: int
@@ -223,6 +224,7 @@ class Comment(BaseModel):
 
 class CommentUpdate(BaseModel):
     user: Optional[RenterUser]
+    photo: Optional[str]
     text: Optional[str]
     household: Optional[HouseholdComment]
     valoration: Optional[int]

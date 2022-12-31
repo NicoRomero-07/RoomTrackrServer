@@ -19,8 +19,8 @@ def create_comment(request: Request, comment: Comment = Body(...)):
     if request.app.database["household"].find_one({"id" : comment["household"]["id"]}) is None:
         raise HTTPException(status_code=404, detail="Household not found")
     
-    if request.app.database["user"].find_one({"username" : comment["user"]["renter_username"]}) is None:
-        raise HTTPException(status_code=404, detail="user not found")
+    #if request.app.database["user"].find_one({"username" : comment["user"]["renter_username"]}) is None:
+    #    raise HTTPException(status_code=404, detail="user not found")
     
     #Comprobar que el nombre de usuario coincide con el email de ese usuario
     
@@ -103,3 +103,8 @@ def update_comment(id: str, request: Request, data: CommentUpdate = Body(...)):
     raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
                         detail=f"Comment with ID {id} not found")
 
+'''GET COMMENTS FROM HOUSEHOLD'''
+@router.get("/household/{id}", response_description="Get comments from household", response_model=List[Comment])
+def get_comment(id: str, request: Request):
+    comments = list(request.app.database["comment"].find({"household.id": id}))
+    return comments
